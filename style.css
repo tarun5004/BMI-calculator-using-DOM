@@ -1,0 +1,280 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #f5f7fb;
+  --card-bg: #ffffff;
+  --text-main: #212529;
+  --text-soft: #5f6670;
+  --line: #e3e7ef;
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --danger: #dc2626;
+  --underweight: #1d4ed8;
+  --normal: #15803d;
+  --overweight: #d97706;
+  --obese: #b91c1c;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: radial-gradient(circle at top, #e9efff 0%, var(--bg) 55%);
+  color: var(--text-main);
+  padding: 20px;
+}
+
+.app-wrapper {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.calculator-card {
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+}
+
+.card-header {
+  margin-bottom: 20px;
+}
+
+.card-header h1 {
+  font-size: 2rem;
+  margin-bottom: 6px;
+}
+
+.card-header p {
+  color: var(--text-soft);
+}
+
+.bmi-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-field label {
+  font-weight: 600;
+}
+
+.form-field input {
+  border: 1px solid #ccd4e0;
+  border-radius: 9px;
+  padding: 11px 12px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.form-field input:focus {
+  border-color: var(--primary);
+}
+
+.unit-switch {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.unit-switch legend {
+  padding: 0 6px;
+  font-weight: 600;
+}
+
+.unit-switch label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.action-row {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  border: 0;
+  border-radius: 9px;
+  padding: 11px 14px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: #fff;
+  box-shadow: 0 8px 16px rgba(37, 99, 235, 0.28);
+}
+
+.btn-outline {
+  background: #f8fafc;
+  color: var(--text-main);
+  border: 1px solid #d4dcea;
+}
+
+.btn-clear {
+  background: #fef2f2;
+  color: var(--danger);
+  border: 1px solid #fecaca;
+  padding: 8px 12px;
+}
+
+.form-message {
+  min-height: 22px;
+  margin-top: 10px;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.form-message.error {
+  color: var(--danger);
+}
+
+.form-message.success {
+  color: #166534;
+}
+
+.result-card {
+  margin-top: 10px;
+  border: 1px solid var(--line);
+  border-left: 6px solid #64748b;
+  border-radius: 10px;
+  padding: 14px;
+  background: #f8fafc;
+}
+
+.result-card h2 {
+  margin-bottom: 8px;
+}
+
+.result-name {
+  margin-bottom: 6px;
+  color: var(--text-soft);
+  font-weight: 600;
+}
+
+.result-bmi,
+.result-category {
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+}
+
+.result-card.underweight {
+  border-left-color: var(--underweight);
+}
+
+.result-card.normal {
+  border-left-color: var(--normal);
+}
+
+.result-card.overweight {
+  border-left-color: var(--overweight);
+}
+
+.result-card.obese {
+  border-left-color: var(--obese);
+}
+
+.category-section,
+.history-section {
+  margin-top: 20px;
+}
+
+.category-section h2,
+.history-section h2 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid var(--line);
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background: #f8fafc;
+}
+
+.history-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.history-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.history-list li {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 10px;
+  background: #fbfdff;
+}
+
+.history-empty {
+  color: var(--text-soft);
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 680px) {
+  .calculator-card {
+    padding: 18px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .action-row {
+    flex-direction: column;
+  }
+
+  .history-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
