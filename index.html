@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BMI Calculator - DOM Project</title>
   <link rel="stylesheet" href="style.css" />
@@ -16,44 +16,45 @@
 
       <form id="bmiForm" class="bmi-form" novalidate>
         <div class="form-field">
-          <label for="personName">Name</label>
-          <input id="personName" type="text" placeholder="Enter your name" autocomplete="off" />
+          <label for="personName">Nmae</label>
+          <input id="personName" type="text" placeholder="Enter your name" autocomplete="off">
         </div>
 
         <fieldset class="unit-switch">
           <legend>Unit Type</legend>
-          <label>
-            <input type="radio" name="unitType" value="metric" checked />
+          <label for="">
+            <input type="radio" name="unitType" value="metric" />
             Metric (cm / kg)
           </label>
-          <label>
+            <label for="">
             <input type="radio" name="unitType" value="imperial" />
             Imperial (ft / lbs)
           </label>
         </fieldset>
 
+
         <div class="form-grid">
           <div class="form-field">
-            <label for="height" id="heightLabel">Height (cm)</label>
-            <input id="height" type="number" min="0" step="0.01" placeholder="e.g. 170" />
+            <label for="height" id="heightLabel"> Height (cm)</label>
+            <input  id="height" type="number" min="0" step="0.01" placeholder="e.g. 170" />
           </div>
-
+        </div>
           <div class="form-field">
-            <label for="weight" id="weightLabel">Weight (kg)</label>
-            <input id="weight" type="number" min="0" step="0.01" placeholder="e.g. 65" />
+            <label for="weight" id="weightLabel"> Weight (kg)</label>
+            <input  id="weight" type="number" min="0" step="0.01" placeholder="e.g. 70" />
           </div>
         </div>
 
-        <div class="action-row">
+        <div class="action row">
           <button type="submit" class="btn btn-primary">Calculate BMI</button>
-          <button type="button" id="resetBtn" class="btn btn-outline">Reset</button>
+          <button type="reset" id="resetBtn" class="btn btn-outline">Reset</button>
         </div>
       </form>
 
       <p id="formMessage" class="form-message" aria-live="polite"></p>
 
       <section id="resultCard" class="result-card hidden" aria-live="polite">
-        <h2>Your Result</h2>
+        <h2>Your BMI Result</h2>
         <p class="result-name" id="resultName"></p>
         <p class="result-bmi">
           BMI: <span id="bmiValue">0.00</span>
@@ -76,10 +77,10 @@
         </table>
       </section>
 
-      <section class="history-section">
-        <div class="history-head">
-          <h2>Calculation History</h2>
-          <button type="button" id="clearHistoryBtn" class="btn btn-clear">Clear History</button>
+    <section class="history-section">
+      <div class="history-head">
+        <h2>Calculation History</h2>
+        <button type="button" id="clearHistoryBtn" class="btn btn-clear">Clear History</button>
         </div>
         <ul id="historyList" class="history-list"></ul>
       </section>
